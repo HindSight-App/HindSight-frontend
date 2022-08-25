@@ -28,7 +28,7 @@ const Signup: React.FC = () => {
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
             <IonCol>
               <IonItem>
-
+                <input type={'file'}></input>
               </IonItem>
             </IonCol>
           </IonRow>
