@@ -13,6 +13,8 @@ import {
 
 import "./Signup.css";
 
+
+
 const Signup: React.FC = () => {
   return (
     <IonPage>
@@ -21,6 +23,13 @@ const Signup: React.FC = () => {
           <IonRow>
             <IonCol>
               <IonImg src="https://cdn.discordapp.com/attachments/1007867692197355550/1012415331794440273/Hindsight.png"></IonImg>
+            </IonCol>
+          </IonRow>
+          <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
+            <IonCol>
+              <IonItem>
+
+              </IonItem>
             </IonCol>
           </IonRow>
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
@@ -61,7 +70,7 @@ const Signup: React.FC = () => {
           </IonRow>
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
             <IonCol>
-              <IonButton expand="full">Signup</IonButton>
+              <IonButton expand="full" type="submit">Signup</IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>

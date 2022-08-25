@@ -50,7 +50,7 @@ const Login: React.FC = () => {
           </IonRow>
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
             <IonCol>
-              <IonButton expand="full">Login</IonButton>
+              <IonButton expand="full" type="submit">Login</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
