@@ -10,12 +10,27 @@ import {
   IonText,
   IonImg,
 } from "@ionic/react";
+import { useState } from "react";
+import { Signup, setupProfile } from '../../services/AuthUtils.js'
 
 import "./Signup.css";
 
 
 
 const Signup: React.FC = () => {
+  const [profile, setProfile] = useState({
+    username: '',
+    avatar: '',
+  })
+  const [user, setUser] = useState({
+    email: '',
+    password: ''
+  })
+
+  function handleSignup() {
+    Signup(user.email, user.password);
+    setupProfile(profile.username, profile.password);
+  }
   return (
     <IonPage>
       <IonContent fullscreen>
@@ -40,6 +55,10 @@ const Signup: React.FC = () => {
                   autocomplete="email"
                   inputmode="email"
                   placeholder="Enter Your Email"
+                  onIonChange={e => setUser({
+                    email: e.target.value,
+                    password: {...user}
+                  })}
                 ></IonInput>
               </IonItem>
             </IonCol>
