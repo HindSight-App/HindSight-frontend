@@ -10,6 +10,7 @@ import {
   IonImg,
 } from "@ionic/react";
 import { useState } from "react";
+import { useHistory } from "react-router";
 import {
   SignupSupabase,
   setupProfile,
@@ -35,14 +36,19 @@ const Signup: React.FC = () => {
   });
   const [file, setFile]: any = useState([]);
 
+  let { push } = useHistory();
+
   async function handleSignup(e: any) {
     e.preventDefault();
+
     await SignupSupabase(user.email, user.password);
     await uploadFile(file[0].name, file[0]);
     await setupProfile(
       profile.username,
       `${process.env.REACT_APP_AVATAR_PATH}${file[0].name}`
     );
+
+    push("/create");
   }
 
   return (

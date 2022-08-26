@@ -39,8 +39,8 @@ function App() {
 
   useEffect(() => {
     async function loadUser() {
-      const user = await getUser();
-      setCurrentUser(user);
+      const user: any = await getUser();
+      setCurrentUser(user.access_token);
     }
     loadUser();
   }, []);

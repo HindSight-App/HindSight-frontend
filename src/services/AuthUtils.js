@@ -20,3 +20,9 @@ export async function getUser() {
 
   return user;
 }
+
+export async function signIn(email, password) {
+  const response = await client.auth.signIn({ email, password });
+
+  return response.user;
+}
