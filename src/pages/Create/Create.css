@@ -1,26 +1,32 @@
 .create-buttons {
-  height: 7.42rem;
+  height: 8.21rem;
+  line-height: 100px;
 }
 
 .ideas-page {
   --background: orange;
   --color: white;
-  /* --display: flex;
-  --flex-direction: column-reverse;
-  --align-items: center; */
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 .dreams-page {
-  --background: purple;
+  --background: #9829ce;
   --color: white;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 .memories-page {
-  --background: red;
+  --background: #ff5733;
   --color: white;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 .thoughts-page {
-  --background: lightblue;
+  --background: #33dbff;
   --color: white;
+  font-size: xx-large;
+  font-weight: bold;
 }

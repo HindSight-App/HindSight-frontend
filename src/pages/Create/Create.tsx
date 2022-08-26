@@ -7,10 +7,14 @@ import {
   IonList,
   IonTitle,
   IonLabel,
+  IonRow,
   IonCol,
+  IonGrid,
+  IonIcon,
 } from "@ionic/react";
 
 import "./Create.css";
+import { bulb, moon, recordingSharp, cloudySharp } from "ionicons/icons";
 
 function CreatePage() {
   return (
@@ -22,29 +26,86 @@ function CreatePage() {
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonCol>
-            <IonItem
-              fill="solid"
-              routerLink="/create/ideas"
-              className="ideas-page"
-            >
-              <IonLabel
-                className="create-buttons"
-                class="ion-justify-content-center"
-              >
-                Ideas
-              </IonLabel>
-            </IonItem>
-            <IonItem routerLink="/create/dreams" className="dreams-page">
-              <IonLabel className="create-buttons">Dreams</IonLabel>
-            </IonItem>
-            <IonItem routerLink="/create/memories" className="memories-page">
-              <IonLabel className="create-buttons">Memories</IonLabel>
-            </IonItem>
-            <IonItem routerLink="/create/thoughts" className="thoughts-page">
-              <IonLabel className="create-buttons">Thoughts</IonLabel>
-            </IonItem>
-          </IonCol>
+          <IonItem
+            fill="solid"
+            routerLink="/create/ideas"
+            className="ideas-page"
+          >
+            <IonGrid>
+              <IonRow class="ion-justify-content-between">
+                <IonCol size="auto">
+                  <IonLabel
+                    className="create-buttons"
+                    class="ion-text-align-left"
+                  >
+                    Ideas
+                  </IonLabel>
+                </IonCol>
+                <IonCol size="auto">
+                  <IonLabel className="create-buttons">
+                    <IonIcon icon={bulb} />
+                  </IonLabel>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonItem>
+          <IonItem routerLink="/create/dreams" className="dreams-page">
+            <IonGrid>
+              <IonRow class="ion-justify-content-between">
+                <IonCol size="auto">
+                  <IonLabel
+                    className="create-buttons"
+                    class="ion-text-align-left"
+                  >
+                    Dreams
+                  </IonLabel>
+                </IonCol>
+                <IonCol size="auto">
+                  <IonLabel className="create-buttons">
+                    <IonIcon icon={moon} />
+                  </IonLabel>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonItem>
+          <IonItem routerLink="/create/memories" className="memories-page">
+            <IonGrid>
+              <IonRow class="ion-justify-content-between">
+                <IonCol size="auto">
+                  <IonLabel
+                    className="create-buttons"
+                    class="ion-text-align-left"
+                  >
+                    Memories
+                  </IonLabel>
+                </IonCol>
+                <IonCol size="auto">
+                  <IonLabel className="create-buttons">
+                    <IonIcon icon={recordingSharp} />
+                  </IonLabel>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonItem>
+          <IonItem routerLink="/create/thoughts" className="thoughts-page">
+            <IonGrid>
+              <IonRow class="ion-justify-content-between">
+                <IonCol size="auto">
+                  <IonLabel
+                    className="create-buttons"
+                    class="ion-text-align-left"
+                  >
+                    Thoughts
+                  </IonLabel>
+                </IonCol>
+                <IonCol size="auto">
+                  <IonLabel className="create-buttons">
+                    <IonIcon icon={cloudySharp} />
+                  </IonLabel>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonItem>
         </IonList>
       </IonContent>
     </IonPage>
