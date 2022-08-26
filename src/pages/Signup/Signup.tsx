@@ -29,15 +29,13 @@ const Signup: React.FC = () => {
     email: '', 
     password: ''
   })
-  const [file, setFile] = useState({})
-  console.log('hello');
+  const [file, setFile]:any = useState([]);
+
   async function handleSignup(e:any) {
     e.preventDefault()
-    console.log(e.target);
-    // const [file] = e.target.files;
     await SignupSupabase(user.email, user.password);
-    await setupProfile(profile.username);
-    await uploadFile(file);
+    await uploadFile(file[0].name, file[0]);
+    await setupProfile(profile.username, `${process.env.REACT_APP_AVATAR_PATH}${file[0].name}`);
   }
 
   return (
@@ -53,7 +51,7 @@ const Signup: React.FC = () => {
             <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
               <IonCol>
                 <IonItem>
-                  <input type={'file'} onChange={e => console.log(e.target.files[0])}></input>
+                  <input type={'file'} onChange={e => {if (e.target.files) {file.push(e.target.files[0])}}}></input>
                 </IonItem>
               </IonCol>
             </IonRow>

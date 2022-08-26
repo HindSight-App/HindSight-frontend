@@ -5,16 +5,18 @@ export async function SignupSupabase(email, password){
   return response.user;
 }
 
-export async function setupProfile(username) {
+export async function setupProfile(username, avatar) {
   const response = await client
     .from('Profile')
-    .insert({ username });
+    .insert({ username, avatar });
   return checkError(response);
 }
 
-export async function uploadFile(file) {
+export async function uploadFile(name, file) {
   const response = await client.storage
     .from('avatars')
-    .upload(file);
+    .upload(name, file);
   return checkError(response);
+
 }
+
