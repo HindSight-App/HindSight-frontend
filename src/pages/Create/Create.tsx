@@ -16,7 +16,7 @@ import {
   uploadFile,
 } from "../../services/AuthUtils.js";
 
-import "./Signup.css";
+import "./Create.css";
 
 type User = {
   email: string;
