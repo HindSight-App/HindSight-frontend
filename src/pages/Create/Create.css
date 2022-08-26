@@ -1,0 +1,26 @@
+.create-buttons {
+  height: 7.42rem;
+}
+
+.ideas-page {
+  --background: orange;
+  --color: white;
+  /* --display: flex;
+  --flex-direction: column-reverse;
+  --align-items: center; */
+}
+
+.dreams-page {
+  --background: purple;
+  --color: white;
+}
+
+.memories-page {
+  --background: red;
+  --color: white;
+}
+
+.thoughts-page {
+  --background: lightblue;
+  --color: white;
+}
