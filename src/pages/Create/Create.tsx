@@ -20,17 +20,13 @@ function CreatePage() {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar class="new-background-color">
           <IonTitle>Create Page</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem
-            fill="solid"
-            routerLink="/create/ideas"
-            className="ideas-page"
-          >
+          <IonItem routerLink="/create/ideas" className="ideas-page">
             <IonGrid>
               <IonRow class="ion-justify-content-between">
                 <IonCol size="auto">
