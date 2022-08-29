@@ -4,6 +4,7 @@
   flex-wrap: nowrap;
   background: limegreen;
   /* justify-content: center; */
+  border-style: none;
 }
 
 .input-wrapper {
