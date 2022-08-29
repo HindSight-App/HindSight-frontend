@@ -27,6 +27,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import { useEffect, useState } from "react";
+import MemoriesPage from "./pages/Memories/Memories";
 
 setupIonicReact();
 
@@ -70,7 +71,7 @@ function App() {
             {currentUser ? <DreamsPage /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/create/memories">
-            {currentUser ? <DreamsPage /> : <Redirect to="/" />}
+            {currentUser ? <MemoriesPage /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/create/thoughts">
             {currentUser ? <DreamsPage /> : <Redirect to="/" />}
