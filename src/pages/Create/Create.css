@@ -1,6 +1,6 @@
 .create-buttons {
-  height: 8.21rem;
-  line-height: 100px;
+  height: 8.181rem;
+  line-height: 130px;
 }
 
 .new-background-color {
@@ -33,4 +33,8 @@
   --color: white;
   font-size: xx-large;
   font-weight: bold;
+}
+
+.list-md {
+  padding: 0px;
 }

@@ -1,0 +1,13 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: limegreen;
+}
+.tab-button{
+  --background:limegreen;
+}
+
+ion-grid{
+  padding:0px;
+}

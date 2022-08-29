@@ -25,8 +25,8 @@ import { cloudySharp } from "ionicons/icons";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import { createHindsight } from "../../services/AuthUtils";
-  
-  import "./Thoughts.css";
+import "./Thoughts.css";
+
   type Thought = {
     title: string;
     description: string;
@@ -56,14 +56,14 @@ import { createHindsight } from "../../services/AuthUtils";
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar class="ideas-page">
+          <IonToolbar class="new-background-color">
             <IonButtons slot="start">
                 <IonBackButton defaultHref="/create"/>
             </IonButtons>
             <IonTitle>Thought Create Page</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent>
+        <IonContent class="thoughts-page">
             <form onSubmit={handleCreate}>
             <IonGrid className="grid-Dreams-page">
             <IonRow>

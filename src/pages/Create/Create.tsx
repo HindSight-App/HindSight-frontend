@@ -11,21 +11,19 @@ import {
   IonCol,
   IonGrid,
   IonIcon,
-  IonButtons,
-  IonBackButton,
+  IonFooter,
 } from "@ionic/react";
 
 import "./Create.css";
 import { bulb, moon, recordingSharp, cloudySharp } from "ionicons/icons";
+import Tabs from "../../components/Tabs";
+
 
 function CreatePage() {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar class="new-background-color">
-        <IonButtons slot="start">
-                <IonBackButton defaultHref="/dashboard"/>
-            </IonButtons>
           <IonTitle>Create Page</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -109,6 +107,9 @@ function CreatePage() {
           </IonItem>
         </IonList>
       </IonContent>
+      <IonFooter>
+        <Tabs />
+      </IonFooter>
     </IonPage>
   );
 }

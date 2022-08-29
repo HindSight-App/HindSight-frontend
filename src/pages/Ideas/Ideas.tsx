@@ -56,14 +56,14 @@ import { createHindsight } from "../../services/AuthUtils";
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar class="ideas-page">
+          <IonToolbar class="new-background-color">
             <IonButtons slot="start">
                 <IonBackButton defaultHref="/create"/>
             </IonButtons>
             <IonTitle>Idea Create Page</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent>
+        <IonContent class="ideas-page">
             <form onSubmit={handleCreate}>
             <IonGrid className="grid-ideas-page">
             <IonRow>
