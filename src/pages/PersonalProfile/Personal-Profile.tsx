@@ -29,13 +29,7 @@ function PersonalProfile() {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
-        <IonAvatar>
-          <img src={image} />
-        </IonAvatar>
-      </IonContent>
-
-      <AvatarIcon image={image} />
+      <AvatarIcon image={Image} />
     </IonPage>
   );
 }
