@@ -5,6 +5,7 @@ import { getUser } from "./services/AuthUtils";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Create from "./pages/Create/Create";
+import Ideas from "./pages/Ideas/Ideas";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route exact path="/create">
             {currentUser ? <Create /> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/create/ideas">
+            {currentUser ? <Ideas /> : <Redirect to="/" />}
           </Route>
         </IonRouterOutlet>
       </IonReactRouter>

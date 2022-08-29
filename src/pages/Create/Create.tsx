@@ -11,6 +11,8 @@ import {
   IonCol,
   IonGrid,
   IonIcon,
+  IonButtons,
+  IonBackButton,
 } from "@ionic/react";
 
 import "./Create.css";
@@ -21,6 +23,9 @@ function CreatePage() {
     <IonPage>
       <IonHeader>
         <IonToolbar class="new-background-color">
+        <IonButtons slot="start">
+                <IonBackButton defaultHref="/dashboard"/>
+            </IonButtons>
           <IonTitle>Create Page</IonTitle>
         </IonToolbar>
       </IonHeader>

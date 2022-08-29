@@ -26,3 +26,10 @@ export async function signIn(email, password) {
 
   return response.user;
 }
+
+export async function createHidesight({ title, description, datetime, visibility, type}) {
+  const response = await client
+    .from('Posts').insert({ title, description, datetime, visibility, type})
+
+    return checkError(response);
+}

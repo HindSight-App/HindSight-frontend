@@ -1,0 +1,14 @@
+  ion-toolbar ion-title{
+    margin-top: 10px;
+  }
+.ideas-page-icon{
+    font-size: 128px;
+}
+.grid-ideas-page{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ideas-page-ion-item{
+    width: 20rem
+}
