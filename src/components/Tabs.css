@@ -3,11 +3,23 @@
   flex-direction: row;
   flex-wrap: nowrap;
   background: limegreen;
-}
-.tab-button{
-  --background:limegreen;
+  justify-content: center;
 }
 
-ion-grid{
-  padding:0px;
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-button {
+  --background: limegreen;
+}
+
+ion-grid {
+  padding: 0px;
+}
+
+.local-icon {
+  color: white;
 }
