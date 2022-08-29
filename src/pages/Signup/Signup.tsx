@@ -7,28 +7,46 @@ import {
   IonInput,
   IonItem,
   IonButton,
-  IonText,
   IonImg,
 } from "@ionic/react";
 import { useState } from "react";
-import { signIn } from "../../services/AuthUtils";
 import { useHistory } from "react-router";
+import {
+  SignupSupabase,
+  setupProfile,
+  uploadFile,
+} from "../../services/AuthUtils.js";
 
-import "./Login.css";
+import "./Signup.css";
 
 type User = {
-  email: String;
-  password: String;
+  email: string;
+  password: string;
 };
+type Profile = {
+  username: string;
+};
+const Signup: React.FC = () => {
+  const [profile, setProfile] = useState<Profile>({
+    username: "",
+  });
+  const [user, setUser] = useState<User>({
+    email: "",
+    password: "",
+  });
+  const [file, setFile]: any = useState([]);
 
-function Login() {
   let { push } = useHistory();
-  const [user, setUser] = useState({ email: "", password: "" });
 
-  async function handleSubmit(e: any) {
+  async function handleSignup(e: any) {
     e.preventDefault();
 
-    await signIn(user.email, user.password);
+    await SignupSupabase(user.email, user.password);
+    await uploadFile(file[0].name, file[0]);
+    await setupProfile(
+      profile.username,
+      `${process.env.REACT_APP_AVATAR_PATH}${file[0].name}`
+    );
 
     push("/create");
   }
@@ -36,7 +54,7 @@ function Login() {
   return (
     <IonPage>
       <IonContent fullscreen>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSignup}>
           <IonGrid className="grid">
             <IonRow>
               <IonCol>
@@ -46,11 +64,25 @@ function Login() {
             <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
               <IonCol>
                 <IonItem>
+                  <input
+                    type={"file"}
+                    onChange={(e) => {
+                      if (e.target.files) {
+                        file.push(e.target.files[0]);
+                      }
+                    }}
+                  ></input>
+                </IonItem>
+              </IonCol>
+            </IonRow>
+            <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
+              <IonCol>
+                <IonItem>
                   <IonInput
                     type="email"
                     autocomplete="email"
                     inputmode="email"
-                    placeholder="Email"
+                    placeholder="Enter Your Email"
                     onIonChange={(e) =>
                       setUser({
                         email: String(e.target.value),
@@ -65,10 +97,25 @@ function Login() {
               <IonCol>
                 <IonItem>
                   <IonInput
+                    type="text"
+                    inputmode="text"
+                    placeholder="Create A Username"
+                    onIonChange={(e) =>
+                      setProfile({
+                        username: String(e.target.value),
+                      })
+                    }
+                  ></IonInput>
+                </IonItem>
+              </IonCol>
+            </IonRow>
+            <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
+              <IonCol>
+                <IonItem>
+                  <IonInput
                     type="password"
                     autocomplete="new-password"
-                    inputmode="text"
-                    placeholder="Password"
+                    placeholder="Create A Password"
                     onIonChange={(e) =>
                       setUser({
                         email: user.email,
@@ -82,18 +129,8 @@ function Login() {
             <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
               <IonCol>
                 <IonButton expand="full" type="submit">
-                  Login
+                  Signup
                 </IonButton>
-              </IonCol>
-            </IonRow>
-            <IonRow>
-              <IonCol>
-                <IonText>
-                  Don't have an account?{" "}
-                  <a href="/signup" className="link">
-                    Sign up here
-                  </a>
-                </IonText>
               </IonCol>
             </IonRow>
           </IonGrid>
@@ -101,6 +138,6 @@ function Login() {
       </IonContent>
     </IonPage>
   );
-}
+};
 
-export default Login;
+export default Signup;

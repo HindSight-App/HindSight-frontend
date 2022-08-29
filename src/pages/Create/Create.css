@@ -1,0 +1,36 @@
+.create-buttons {
+  height: 8.21rem;
+  line-height: 100px;
+}
+
+.new-background-color {
+  --background: limegreen;
+}
+
+.ideas-page {
+  --background: orange;
+  --color: white;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.dreams-page {
+  --background: #9829ce;
+  --color: white;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.memories-page {
+  --background: #ff5733;
+  --color: white;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.thoughts-page {
+  --background: #33dbff;
+  --color: white;
+  font-size: xx-large;
+  font-weight: bold;
+}
