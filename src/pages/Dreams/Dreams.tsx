@@ -21,13 +21,13 @@ import {
     IonModal,
     IonTextarea,
   } from "@ionic/react";
-import { bulb } from "ionicons/icons";
+import { moon } from "ionicons/icons";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import { createHindsight } from "../../services/AuthUtils";
   
-  import "./Ideas.css";
-  type Idea = {
+  import "./Dreams.css";
+  type Dream = {
     title: string;
     description: string;
     datetime: string;
@@ -35,13 +35,13 @@ import { createHindsight } from "../../services/AuthUtils";
     type: string;
   };
 
-  function IdeasPage() {
-      const [idea, setIdea] = useState<Idea>({
+  function DreamsPage() {
+      const [dream, setDream] = useState<Dream>({
         title: '',
         description: '',
         datetime: '',
         visibility: 'true',
-        type: 'Idea',
+        type: 'Dream',
       });
     
       let { push } = useHistory();
@@ -49,7 +49,7 @@ import { createHindsight } from "../../services/AuthUtils";
       async function handleCreate(e: any) {
         e.preventDefault();
     
-        await createHindsight(idea);
+        await createHindsight(dream);
     
         push("/dashboard");
       }
@@ -60,15 +60,15 @@ import { createHindsight } from "../../services/AuthUtils";
             <IonButtons slot="start">
                 <IonBackButton defaultHref="/create"/>
             </IonButtons>
-            <IonTitle>Idea Create Page</IonTitle>
+            <IonTitle>Dream Create Page</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
             <form onSubmit={handleCreate}>
-            <IonGrid className="grid-ideas-page">
+            <IonGrid className="grid-Dreams-page">
             <IonRow>
               <IonCol>
-              <IonIcon class='ideas-page-icon'icon={bulb} />
+              <IonIcon class='ideas-page-icon'icon={moon} />
               </IonCol>
             </IonRow>
             <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
@@ -78,12 +78,12 @@ import { createHindsight } from "../../services/AuthUtils";
                     inputmode="text"
                     placeholder="Title"
                     onIonChange={(e) =>
-                        setIdea({
+                        setDream({
                             title: String(e.target.value),
-                            description: idea.description,
-                            datetime: idea.datetime,
-                            visibility: idea.visibility,
-                            type: idea.type
+                            description: dream.description,
+                            datetime: dream.datetime,
+                            visibility: dream.visibility,
+                            type: dream.type
                       })
                     }
                   ></IonInput>
@@ -100,12 +100,12 @@ import { createHindsight } from "../../services/AuthUtils";
                     inputmode="text"
                     placeholder="Description"
                     onIonChange={(e) =>
-                        setIdea({
-                            title: idea.title,
+                        setDream({
+                            title: dream.title,
                             description: String(e.target.value),
-                            datetime: idea.datetime,
-                            visibility: idea.visibility,
-                            type: idea.type
+                            datetime: dream.datetime,
+                            visibility: dream.visibility,
+                            type: dream.type
                       })
                     }
                   ></IonTextarea>
@@ -118,12 +118,12 @@ import { createHindsight } from "../../services/AuthUtils";
                     <IonDatetimeButton datetime="datetime" />
                     <IonModal keepContentsMounted={true}>
                         <IonDatetime id="datetime" onIonChange={(e) =>
-                        setIdea({
-                            title: idea.title,
-                            description: idea.description,
+                        setDream({
+                            title: dream.title,
+                            description: dream.description,
                             datetime: String(e.target.value),
-                            visibility: idea.visibility,
-                            type: idea.type
+                            visibility: dream.visibility,
+                            type: dream.type
                       })
                     }></IonDatetime>
                     </IonModal>
@@ -135,12 +135,12 @@ import { createHindsight } from "../../services/AuthUtils";
                 <IonItem class='ideas-page-ion-item'>
                     <IonLabel>Public/Private:</IonLabel>
                  <IonSelect onIonChange={(e) =>
-                        setIdea({
-                            title: idea.title,
-                            description: idea.description,
-                            datetime: idea.datetime,
+                        setDream({
+                            title: dream.title,
+                            description: dream.description,
+                            datetime: dream.datetime,
                             visibility: String(e.target.value),
-                            type: idea.type
+                            type: dream.type
                       })
                     }>
                     <IonSelectOption value="true">Public</IonSelectOption>
@@ -152,7 +152,7 @@ import { createHindsight } from "../../services/AuthUtils";
             <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
               <IonCol>
                 <IonButton expand="full" type="submit">
-                  Submit Idea
+                  Submit Dream
                 </IonButton>
               </IonCol>
             </IonRow>
@@ -163,5 +163,5 @@ import { createHindsight } from "../../services/AuthUtils";
     );
   }
   
-  export default IdeasPage;
+  export default DreamsPage;
   
