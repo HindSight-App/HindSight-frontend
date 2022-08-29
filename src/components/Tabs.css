@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   background: limegreen;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .input-wrapper {
