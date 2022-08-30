@@ -6,3 +6,14 @@ export interface Profile {
   karma: number;
   avatar: string;
 }
+
+export interface Post {
+  id: number;
+  title: string;
+  description: string;
+  user_id: string;
+  type: string;
+  visability: boolean;
+  datetime: string;
+}
+

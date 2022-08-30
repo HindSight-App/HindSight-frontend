@@ -8,12 +8,15 @@ import {
   IonCol,
   IonGrid,
   IonButtons,
+  IonFooter
 } from "@ionic/react";
 import "./Personal-Profile.css";
 import AvatarIcon from "../../components/AvatarIcon";
 import { getProfile } from "../../services/AuthUtils";
 import { useEffect, useState } from "react";
 import { Profile } from "../../Types/types";
+import Tabs from "../../components/Tabs";
+import PostList from "../../components/PostList";
 
 function PersonalProfile() {
   const [profile, setProfile] = useState<Profile>({
@@ -40,7 +43,7 @@ function PersonalProfile() {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start"></IonButtons>
-          <IonTitle>Personal Profile</IonTitle>
+          <IonTitle>{profile.username}'s Profile</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="new-background-color">
@@ -50,14 +53,19 @@ function PersonalProfile() {
               <AvatarIcon image={profile.avatar} />
             </IonCol>
           </IonRow>
-          <IonRow>
-            <IonCol>{profile.username}</IonCol>
-          </IonRow>
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
-            <IonCol>{profile.karma}</IonCol>
+            <IonCol>Upvotes: {profile.karma}</IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>
+              <PostList {...profile}/>
+            </IonCol>
           </IonRow>
         </IonGrid>
       </IonContent>
+      <IonFooter>
+        <Tabs />
+      </IonFooter>
     </IonPage>
   );
 }
