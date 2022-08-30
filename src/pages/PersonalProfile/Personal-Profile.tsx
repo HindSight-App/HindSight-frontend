@@ -1,24 +1,16 @@
 import {
   IonContent,
   IonPage,
-  IonItem,
   IonHeader,
   IonToolbar,
-  IonList,
   IonTitle,
-  IonLabel,
   IonRow,
   IonCol,
   IonGrid,
-  IonIcon,
-  IonFooter,
   IonButtons,
-  IonAvatar,
 } from "@ionic/react";
 import "./Personal-Profile.css";
-import { useParams } from "react-router";
 import AvatarIcon from "../../components/AvatarIcon";
-import { AvatarProps } from "../../components/AvatarIcon";
 import { getProfile } from "../../services/AuthUtils";
 import { useEffect, useState } from "react";
 import { Profile } from "../../Types/types";
@@ -51,7 +43,21 @@ function PersonalProfile() {
           <IonTitle>Personal Profile</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <AvatarIcon image={profile.avatar} />
+      <IonContent className="new-background-color">
+        <IonGrid className="grid-Dreams-page ion-justify-content-center ion-align-items-center ion-text-center">
+          <IonRow>
+            <IonCol>
+              <AvatarIcon image={profile.avatar} />
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>{profile.username}</IonCol>
+          </IonRow>
+          <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
+            <IonCol>{profile.karma}</IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonContent>
     </IonPage>
   );
 }

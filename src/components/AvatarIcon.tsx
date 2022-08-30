@@ -1,13 +1,4 @@
-import React, { FC } from "react";
-import {
-  IonItem,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonLabel,
-  IonIcon,
-  IonAvatar,
-} from "@ionic/react";
+import React from "react";
 import "./AvatarIcon.css";
 
 export interface AvatarProps {
@@ -15,11 +6,7 @@ export interface AvatarProps {
 }
 
 const AvatarIcon = ({ image }: AvatarProps) => {
-  return (
-    <IonAvatar>
-      <img alt="avatar" src={image} />
-    </IonAvatar>
-  );
+  return <img alt="avatar" className="avatar" src={image} />;
 };
 
 export default AvatarIcon;
