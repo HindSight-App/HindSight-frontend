@@ -29,6 +29,7 @@ import "./theme/variables.css";
 import { useEffect, useState } from "react";
 import MemoriesPage from "./pages/Memories/Memories";
 import ThoughtsPage from "./pages/Thoughts/Thoughts";
+import PersonalProfile from "./pages/PersonalProfile/Personal-Profile";
 
 setupIonicReact();
 
@@ -76,6 +77,9 @@ function App() {
           </Route>
           <Route exact path="/create/thoughts">
             {currentUser ? <ThoughtsPage /> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/profile">
+            {currentUser ? <PersonalProfile /> : <Redirect to="/" />}
           </Route>
         </IonRouterOutlet>
       </IonReactRouter>

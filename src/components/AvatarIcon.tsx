@@ -10,7 +10,7 @@ import {
 } from "@ionic/react";
 import "./AvatarIcon.css";
 
-interface AvatarProps {
+export interface AvatarProps {
   image: string;
 }
 
