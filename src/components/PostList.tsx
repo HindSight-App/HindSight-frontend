@@ -3,8 +3,9 @@ import "./PostList.css";
 import { useState } from "react";
 import { Profile, Post } from "../Types/types";
 import { getPostsById } from "../services/AuthUtils";
-import { IonItem } from "@ionic/react";
+import { IonItem, IonRow, IonCol, IonGrid } from "@ionic/react";
 import PostEl from "./PostEl";
+import { client } from "../services/client";
 
 
 const PostList = ({ 
@@ -19,17 +20,28 @@ const PostList = ({
     async function loadPosts() {
       const result = await getPostsById(user_id);
       setPosts(result);
+      await client
+        .from('*')
+        .on('*', async (payload) => {
+          const newResult = await getPostsById(user_id);
+          setPosts(newResult);
+        })
+        .subscribe();
     }
     loadPosts();
   }, [user_id]);
   return (
-  <IonItem>
+  <IonGrid>
     {posts.map((post:Post) => (
-      
-      <PostEl key={post.id} {...post}/>
-      
+      <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
+        <IonCol className={post.type}>
+          <IonItem className={post.type}>
+            <PostEl key={post.id} {...post}/>
+          </IonItem>
+        </IonCol>
+      </IonRow>
     ))}
-  </IonItem>
+  </IonGrid>
 )};
 
 export default PostList;

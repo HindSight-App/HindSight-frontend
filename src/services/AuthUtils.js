@@ -23,7 +23,6 @@ export async function getUser() {
 
 export async function getProfile() {
   const { user } = await getUser();
-  console.log(user);
   const response = await client
     .from("Profile")
     .select("*")
@@ -59,4 +58,13 @@ export async function getPostsById(user_id) {
     .select('*')
     .match(user_id);
   return checkError(response);
+}
+
+export async function deleteById(id) {
+  const response = await client
+    .from('Posts')
+    .delete()
+    .match({ id: id });
+
+  return checkError(response)
 }

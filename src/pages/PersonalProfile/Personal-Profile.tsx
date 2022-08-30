@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import { Profile } from "../../Types/types";
 import Tabs from "../../components/Tabs";
 import PostList from "../../components/PostList";
+import { client } from "../../services/client";
 
 function PersonalProfile() {
   const [profile, setProfile] = useState<Profile>({
@@ -33,11 +34,17 @@ function PersonalProfile() {
       const { id, created_at, user_id, username, karma, avatar } =
         await getProfile();
       setProfile({ id, created_at, user_id, username, karma, avatar });
+      await client
+        .from('*')
+        .on('*', async (payload) => {
+          const { id, created_at, user_id, username, karma, avatar } = await getProfile();
+          setProfile({id, created_at, user_id, username, karma, avatar});
+        })
+        .subscribe();
     }
     loadProfile();
   }, []);
 
-  console.log("profile", profile);
   return (
     <IonPage>
       <IonHeader>

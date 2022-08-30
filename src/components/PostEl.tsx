@@ -1,44 +1,27 @@
 import React from "react";
-import "./PostList.css";
+import "./PostEl.css";
 import { Post } from "../Types/types";
+import { IonButton } from "@ionic/react";
+import { deleteById } from "../services/AuthUtils";
 
-const PostEl = ({ 
+
+const PostEl = ({
+  id, 
   title,
   description,
   type,
   visability,
   datetime }: Post) => {
-      if (type === 'Idea') {
-        return (
-        <div className="idea">
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        )
-      } else if (type === 'Dream') {
-        return (
-        <div className="dream">
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        )
-      }
-      else if (type === 'Memory') {
-        return (
-        <div className="memory">
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        )
-      }
-      else if (type === 'Thought') {
-        return (
-        <div className="thought">
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        )
-      }
+    async function handleDelete() {
+      await deleteById(id);
+    }
+      return (
+      <div className={type}>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <IonButton onClick={handleDelete}>Delete</IonButton>
+      </div>
+      )
     };
 
 export default PostEl;
