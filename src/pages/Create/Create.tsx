@@ -1,7 +1,6 @@
 import {
   IonContent,
   IonPage,
-  IonItem,
   IonHeader,
   IonToolbar,
   IonList,
@@ -45,16 +44,11 @@ function CreatePage() {
               </IonRow>
             </div>
           </IonGrid>
-          <IonItem routerLink="/create/dreams" className="dreams-page">
-            <IonGrid>
-              <IonRow class="ion-justify-content-between">
+          <IonGrid>
+            <div onClick={() => push("/create/dreams")}>
+              <IonRow class="dreams-button ion-justify-content-around">
                 <IonCol size="auto">
-                  <IonLabel
-                    className="create-buttons"
-                    class="ion-text-align-left"
-                  >
-                    Dreams
-                  </IonLabel>
+                  <div className="create-buttons">Dreams</div>
                 </IonCol>
                 <IonCol size="auto">
                   <IonLabel className="create-buttons">
@@ -62,18 +56,13 @@ function CreatePage() {
                   </IonLabel>
                 </IonCol>
               </IonRow>
-            </IonGrid>
-          </IonItem>
-          <IonItem routerLink="/create/memories" className="memories-page">
-            <IonGrid>
-              <IonRow class="ion-justify-content-between">
+            </div>
+          </IonGrid>
+          <IonGrid>
+            <div onClick={() => push("/create/memories")}>
+              <IonRow class="memories-button ion-justify-content-around">
                 <IonCol size="auto">
-                  <IonLabel
-                    className="create-buttons"
-                    class="ion-text-align-left"
-                  >
-                    Memories
-                  </IonLabel>
+                  <div className="create-buttons">Memories</div>
                 </IonCol>
                 <IonCol size="auto">
                   <IonLabel className="create-buttons">
@@ -81,18 +70,13 @@ function CreatePage() {
                   </IonLabel>
                 </IonCol>
               </IonRow>
-            </IonGrid>
-          </IonItem>
-          <IonItem routerLink="/create/thoughts" className="thoughts-page">
-            <IonGrid>
-              <IonRow class="ion-justify-content-between">
+            </div>
+          </IonGrid>
+          <IonGrid>
+            <div onClick={() => push("/create/thoughts")}>
+              <IonRow class="thoughts-button ion-justify-content-around">
                 <IonCol size="auto">
-                  <div
-                    className="create-buttons"
-                    // class="ion-text-align-left"
-                  >
-                    Thoughts
-                  </div>
+                  <div className="create-buttons">Thoughts</div>
                 </IonCol>
                 <IonCol size="auto">
                   <IonLabel className="create-buttons">
@@ -100,8 +84,8 @@ function CreatePage() {
                   </IonLabel>
                 </IonCol>
               </IonRow>
-            </IonGrid>
-          </IonItem>
+            </div>
+          </IonGrid>
         </IonList>
       </IonContent>
       <IonFooter>
