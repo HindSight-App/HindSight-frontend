@@ -37,8 +37,8 @@ const PostList = ({
   <IonGrid>
     {posts.map((post:Post) => (
       <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
-        <IonCol className={post.type}>
-          <IonItem className={post.type}>
+        <IonCol >
+          <IonItem class={post.type}>
             <PostEl key={post.id} {...post}/>
           </IonItem>
         </IonCol>

@@ -45,7 +45,7 @@ function PersonalProfile() {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar class="new-background-color">
           <IonButtons slot="start"></IonButtons>
           <IonTitle>{profile.username}'s Profile</IonTitle>
         </IonToolbar>

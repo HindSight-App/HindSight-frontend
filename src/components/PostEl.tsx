@@ -16,7 +16,7 @@ const PostEl = ({
       await deleteById(id);
     }
       return (
-      <div className={type}>
+      <div>
         <h1>{title}</h1>
         <p>{description}</p>
         <IonButton onClick={handleDelete}>Delete</IonButton>
