@@ -16,7 +16,7 @@ const AvatarIcon = ({ avatar, username }: AvatarProps) => {
       push('/profile')
     }
   }
-  return <img alt="avatar" className="avatar" src={avatar} onClick={handleProfile}/>;
+  return <img alt="avatar" className="avatar" src={avatar} onClick={handleProfile} style={{cursor: 'pointer'}}/>;
 };
 
 export default AvatarIcon;
