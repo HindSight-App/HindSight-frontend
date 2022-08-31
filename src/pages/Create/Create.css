@@ -1,36 +1,63 @@
 .create-buttons {
-  height: 8.21rem;
-  line-height: 100px;
+  height: 8.181rem;
+  /* height: 19vh; */
+  line-height: 130px;
 }
 
 .new-background-color {
   --background: limegreen;
 }
 
-.ideas-page {
-  --background: orange;
-  --color: white;
+.ideas-button {
+  display: flex;
+  background: orange;
+  color: white;
   font-size: xx-large;
   font-weight: bold;
 }
 
-.dreams-page {
-  --background: #9829ce;
-  --color: white;
+.ideas-button:hover {
+  background-color: #fdc01b;
+  cursor: pointer;
+}
+
+.dreams-button {
+  display: flex;
+  background: #9829ce;
+  color: white;
   font-size: xx-large;
   font-weight: bold;
 }
 
-.memories-page {
-  --background: #ff5733;
-  --color: white;
+.dreams-button:hover {
+  cursor: pointer;
+  background-color: #a14bf6;
+}
+
+.memories-button {
+  background: #ff5733;
+  color: white;
   font-size: xx-large;
   font-weight: bold;
 }
 
-.thoughts-page {
-  --background: #33dbff;
-  --color: white;
+.memories-button:hover {
+  cursor: pointer;
+  background-color: #ff6666;
+}
+
+.thoughts-button {
+  background: #33dbff;
+  color: white;
   font-size: xx-large;
   font-weight: bold;
+}
+
+.thoughts-button:hover {
+  background-color: #66e8ff;
+  cursor: pointer;
+}
+
+.list-md {
+  padding: 0px;
 }

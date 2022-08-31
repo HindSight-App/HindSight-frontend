@@ -1,0 +1,38 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: limegreen;
+  padding: 8.5px;
+  border-style: none;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.tab:hover {
+  cursor: pointer;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-button {
+  --background: limegreen;
+}
+
+ion-grid {
+  padding: 0px;
+}
+
+.local-icon {
+  color: white;
+}

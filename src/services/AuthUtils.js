@@ -21,15 +21,51 @@ export async function getUser() {
   return user;
 }
 
+export async function getProfile() {
+  const { user } = await getUser();
+  const response = await client
+    .from("Profile")
+    .select("*")
+    .match({ user_id: user.id })
+    .single();
+
+  return checkError(response);
+}
+
 export async function signIn(email, password) {
   const response = await client.auth.signIn({ email, password });
 
   return response.user;
 }
 
-export async function createHindsight({ title, description, datetime, visibility, type}) {
+export async function createHindsight({
+  title,
+  description,
+  datetime,
+  visibility,
+  type,
+}) {
   const response = await client
-    .from('Posts').insert({ title, description, datetime, visibility, type})
+    .from("Posts")
+    .insert({ title, description, datetime, visibility, type });
 
-    return checkError(response);
+  return checkError(response);
+}
+
+export async function getPostsById(user_id) {
+  const response = await client
+    .from('Posts')
+    .select('*')
+    .match({user_id});
+    
+  return checkError(response);
+}
+
+export async function deleteById(id) {
+  const response = await client
+    .from('Posts')
+    .delete()
+    .match({ id: id });
+
+  return checkError(response)
 }
