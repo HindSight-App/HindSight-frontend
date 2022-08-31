@@ -1,0 +1,26 @@
+.header {
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  padding-top: 1.75rem;
+}
+
+ion-button {
+  --background: #ffffff;
+  --color: black;
+}
+
+ion-content {
+  --background: dodgerblue;
+}
+
+ion-item {
+  --background: white;
+  --color: black;
+}
+
+.link {
+  color: white;
+}

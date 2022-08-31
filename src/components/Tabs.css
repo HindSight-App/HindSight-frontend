@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: limegreen;
+  /* justify-content: center; */
+  border-style: none;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-button {
+  --background: limegreen;
+}
+
+ion-grid {
+  padding: 0px;
+}
+
+.local-icon {
+  color: white;
+}

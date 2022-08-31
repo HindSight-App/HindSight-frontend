@@ -1,0 +1,7 @@
+{
+  "name": "HindSight-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
