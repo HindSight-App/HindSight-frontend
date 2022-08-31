@@ -1,8 +1,10 @@
 import "./DashboardPost.css";
-import { Post } from "../Types/types";
-import { IonButton, IonGrid, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding } from "@ionic/react";
-import { addKarma, deleteById, getProfileById } from "../services/AuthUtils";
+import { Post, Profile } from "../Types/types";
+import { IonGrid, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding } from "@ionic/react";
+import { addKarma, getProfileById } from "../services/AuthUtils";
 import { thumbsUpOutline } from "ionicons/icons";
+import AvatarIcon from "./AvatarIcon";
+import { useEffect, useState } from "react";
 
 
 const DashboardPost = ({
@@ -10,20 +12,35 @@ const DashboardPost = ({
   title,
   description,
   type,
-  user_id
- }: Post) => {
+  user_id,
+ }: Post  ) => {
+    const [profile, setProfile] = useState<Profile>()
     async function handleUpvote() {
         const user = await getProfileById(user_id);
         console.log(user)
         const newKarma = user.karma++;
         await addKarma(user_id, newKarma)
         console.log(user)
-
+    }
+    useEffect(() => {
+      async function getProfile(){
+        const results = await getProfileById(user_id);
+        setProfile(results);
+      }
+      getProfile()
+    }, [user_id])
+    if (!profile) {
+      return null;
     }
       return (
         <IonItemSliding>
         <IonItem className={`${type} dashbord-post`}>
-            <IonGrid className={type}>
+            <IonGrid >
+              <div className="avatar">
+                <AvatarIcon  image={profile.avatar} />
+                {profile.username}'s {type}
+              </div>
+                
                 <h1>{title}</h1>
                 <p>{description}</p>
             </IonGrid>

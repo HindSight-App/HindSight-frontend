@@ -1,37 +1,19 @@
 import {
     IonContent,
     IonPage,
-    IonItem,
     IonHeader,
     IonToolbar,
     IonTitle,
-    IonLabel,
-    IonRow,
     IonCol,
     IonGrid,
-    IonIcon,
-    IonButtons,
-    IonButton,
-    IonBackButton,
-    IonInput,
-    IonSelectOption,
-    IonSelect,
-    IonDatetime,
-    IonDatetimeButton,
-    IonModal,
-    IonTextarea,
     IonFooter,
     IonList,
-    IonItemOption,
-    IonItemOptions,
-    IonItemSliding,
   } from "@ionic/react";
-import { moon, thumbsDownOutline, thumbsUpOutline, thumbsUpSharp } from "ionicons/icons";
 import { useEffect, useState } from "react";
 import AvatarIcon from "../../components/AvatarIcon";
 import DashboardPost from "../../components/DashboardPost";
 import Tabs from "../../components/Tabs";
-import { createHindsight, getPosts, getProfile } from "../../services/AuthUtils";
+import { getPosts, getProfile } from "../../services/AuthUtils";
 import { client } from "../../services/client";
 import { Post, Profile } from "../../Types/types";
   
@@ -74,11 +56,11 @@ import { Post, Profile } from "../../Types/types";
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar class="ideas-page">
+          <IonToolbar class="new-background-color">
             <IonGrid >
                 <IonCol class='dashboard-header-img'>
                     <IonTitle>Vision Board</IonTitle>
-                    <IonCol class='dashoard-spacer'></IonCol>
+                    <IonCol class='dashboard-spacer'></IonCol>
                     <AvatarIcon image={user.avatar} />
                 </IonCol>
             </IonGrid>
@@ -88,9 +70,9 @@ import { Post, Profile } from "../../Types/types";
             <IonList>
 
                     {posts.map(post =>
-                    <IonItem class={post.type}>
+                    <div >
                         <DashboardPost key={post.id + post.title} {...post} />
-                    </IonItem>
+                    </div>
                     )}
                 
             </IonList>

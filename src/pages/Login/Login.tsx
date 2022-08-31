@@ -16,11 +16,6 @@ import { useHistory } from "react-router";
 
 import "./Login.css";
 
-type User = {
-  email: String;
-  password: String;
-};
-
 function Login() {
   let { push } = useHistory();
   const [user, setUser] = useState({ email: "", password: "" });

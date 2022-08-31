@@ -7,6 +7,13 @@
     width: 60px;
 }
 
-.dashoard-spacer{
+.dashboard-spacer{
     margin-right: 90px;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width:40px;
 }

@@ -1,20 +1,27 @@
 .Idea {
-    --background: orange;
+  border-left: 10px solid orange;
+    --background: #F0EFEB;
+    --width: 100%;
   }
   
   .Dream {
-    --background: #9829ce;
+    border-left: 10px solid #9829ce;
+    --background: #E8DCFB;
+    --width: 100%;
   }
   
   .Memory {
-    --background: #ff5733;
+    border-left: 10px solid #ff5733;
+    --background: #FBDCE5;
+    --width: 100%;
   }
   
   .Thought {
-    --background: #33dbff;
+    border-left: 10px solid #33dbff;
+    --background: #DCF9FB;
+    --width: 100%;
   }
 
   .dashbord-post{
-    display: flex;
     flex-direction: row;
   }
