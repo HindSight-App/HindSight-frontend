@@ -56,7 +56,8 @@ export async function getPostsById(user_id) {
   const response = await client
     .from('Posts')
     .select('*')
-    .match(user_id);
+    .match({user_id});
+    
   return checkError(response);
 }
 

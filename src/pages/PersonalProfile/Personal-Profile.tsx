@@ -20,31 +20,28 @@ import PostList from "../../components/PostList";
 import { client } from "../../services/client";
 
 function PersonalProfile() {
-  const [profile, setProfile] = useState<Profile>({
-    id: 0,
-    created_at: "",
-    user_id: "",
-    username: "",
-    karma: 0,
-    avatar: "",
-  });
+  const [profile, setProfile] = useState<Profile>();
 
   useEffect(() => {
+    let subscription:any = null;
     async function loadProfile() {
       const { id, created_at, user_id, username, karma, avatar } =
         await getProfile();
       setProfile({ id, created_at, user_id, username, karma, avatar });
-      await client
-        .from('*')
-        .on('*', async (payload) => {
-          const { id, created_at, user_id, username, karma, avatar } = await getProfile();
-          setProfile({id, created_at, user_id, username, karma, avatar});
+      subscription = client
+        .from(`Profile:user_id=eq.${user_id}`)
+        .on('UPDATE', async (payload) => {
+          console.log('Change received!', payload)
+          setProfile(payload.new);
         })
         .subscribe();
     }
     loadProfile();
+    return () => {client.removeSubscription(subscription)}
   }, []);
-
+  if (!profile) {
+    return null;
+  }
   return (
     <IonPage>
       <IonHeader>
