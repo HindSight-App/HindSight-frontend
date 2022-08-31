@@ -18,7 +18,6 @@ import "./Create.css";
 import { bulb, moon, recordingSharp, cloudySharp } from "ionicons/icons";
 import Tabs from "../../components/Tabs";
 
-
 function CreatePage() {
   return (
     <IonPage>
@@ -90,12 +89,12 @@ function CreatePage() {
             <IonGrid>
               <IonRow class="ion-justify-content-between">
                 <IonCol size="auto">
-                  <IonLabel
+                  <div
                     className="create-buttons"
-                    class="ion-text-align-left"
+                    // class="ion-text-align-left"
                   >
                     Thoughts
-                  </IonLabel>
+                  </div>
                 </IonCol>
                 <IonCol size="auto">
                   <IonLabel className="create-buttons">
