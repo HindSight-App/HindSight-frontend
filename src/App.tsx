@@ -30,6 +30,7 @@ import { useEffect, useState } from "react";
 import MemoriesPage from "./pages/Memories/Memories";
 import ThoughtsPage from "./pages/Thoughts/Thoughts";
 import PersonalProfile from "./pages/PersonalProfile/Personal-Profile";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 setupIonicReact();
 
@@ -80,6 +81,9 @@ function App() {
           </Route>
           <Route exact path="/profile">
             {currentUser ? <PersonalProfile /> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/dashboard">
+            {currentUser ? <Dashboard /> : <Redirect to="/" />}
           </Route>
         </IonRouterOutlet>
       </IonReactRouter>

@@ -1,0 +1,20 @@
+.Idea {
+    --background: orange;
+  }
+  
+  .Dream {
+    --background: #9829ce;
+  }
+  
+  .Memory {
+    --background: #ff5733;
+  }
+  
+  .Thought {
+    --background: #33dbff;
+  }
+
+  .dashbord-post{
+    display: flex;
+    flex-direction: row;
+  }

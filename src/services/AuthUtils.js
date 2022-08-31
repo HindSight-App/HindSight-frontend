@@ -32,6 +32,16 @@ export async function getProfile() {
   return checkError(response);
 }
 
+export async function getProfileById(user_id) {
+  const response = await client
+  .from("Profile")
+  .select("*")
+  .match({ user_id })
+  .single();
+
+return checkError(response);
+}
+
 export async function signIn(email, password) {
   const response = await client.auth.signIn({ email, password });
 
@@ -68,4 +78,23 @@ export async function deleteById(id) {
     .match({ id: id });
 
   return checkError(response)
+}
+
+export async function getPosts(){
+  const response = await client
+    .from('Posts')
+    .select('*')
+    .match({ visibility: true })
+
+    return checkError(response)
+}
+
+export async function addKarma(user_id, karma){
+  const response = await client
+    .from('Profile')
+    .update(karma)
+    .match({ user_id})
+
+    
+    return checkError(response)
 }
