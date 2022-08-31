@@ -37,7 +37,7 @@ const DashboardPost = ({
         <IonItem className={`${type} dashbord-post`}>
             <IonGrid >
               <div className="avatar">
-                <AvatarIcon  image={profile.avatar} />
+                <AvatarIcon  {...profile} />
                 {profile.username}'s {type}
               </div>
                 

@@ -54,7 +54,7 @@ function PersonalProfile() {
         <IonGrid className="grid-Dreams-page ion-justify-content-center ion-align-items-center ion-text-center">
           <IonRow>
             <IonCol>
-              <AvatarIcon image={profile.avatar} />
+              <AvatarIcon {...profile} />
             </IonCol>
           </IonRow>
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">

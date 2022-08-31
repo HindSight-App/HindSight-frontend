@@ -22,7 +22,6 @@ import { Post, Profile } from "../../Types/types";
   function Dashboard() {
       const [user, setUser] = useState<Profile>()
       const [posts, setPosts] = useState<Post[]>([]);
-      
         useEffect(() => {
             let subscription:any = null;
             async function loadPosts() {
@@ -61,7 +60,7 @@ import { Post, Profile } from "../../Types/types";
                 <IonCol class='dashboard-header-img'>
                     <IonTitle>Vision Board</IonTitle>
                     <IonCol class='dashboard-spacer'></IonCol>
-                    <AvatarIcon image={user.avatar} />
+                    <AvatarIcon {...user} />
                 </IonCol>
             </IonGrid>
           </IonToolbar>
