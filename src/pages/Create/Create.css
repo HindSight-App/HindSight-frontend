@@ -4,13 +4,19 @@
   line-height: 130px;
 }
 
+.ideas-button:hover {
+  background-color: #fdc01b;
+  cursor: pointer;
+}
+
 .new-background-color {
   --background: limegreen;
 }
 
-.ideas-page {
-  --background: orange;
-  --color: white;
+.ideas-button {
+  display: flex;
+  background: orange;
+  color: white;
   font-size: xx-large;
   font-weight: bold;
 }

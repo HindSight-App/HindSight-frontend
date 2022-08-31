@@ -17,8 +17,11 @@ import {
 import "./Create.css";
 import { bulb, moon, recordingSharp, cloudySharp } from "ionicons/icons";
 import Tabs from "../../components/Tabs";
+import { useHistory } from "react-router";
 
 function CreatePage() {
+  const { push } = useHistory();
+
   return (
     <IonPage>
       <IonHeader>
@@ -28,16 +31,11 @@ function CreatePage() {
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem routerLink="/create/ideas" className="ideas-page">
-            <IonGrid>
-              <IonRow class="ion-justify-content-between">
+          <IonGrid>
+            <div onClick={() => push("/create/ideas")}>
+              <IonRow class="ideas-button ion-justify-content-around">
                 <IonCol size="auto">
-                  <IonLabel
-                    className="create-buttons"
-                    class="ion-text-align-left"
-                  >
-                    Ideas
-                  </IonLabel>
+                  <div className="create-buttons">Ideas</div>
                 </IonCol>
                 <IonCol size="auto">
                   <IonLabel className="create-buttons">
@@ -45,8 +43,8 @@ function CreatePage() {
                   </IonLabel>
                 </IonCol>
               </IonRow>
-            </IonGrid>
-          </IonItem>
+            </div>
+          </IonGrid>
           <IonItem routerLink="/create/dreams" className="dreams-page">
             <IonGrid>
               <IonRow class="ion-justify-content-between">

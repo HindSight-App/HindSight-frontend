@@ -17,6 +17,7 @@
 
 .tab:hover {
   background-color: green;
+  cursor: pointer;
 }
 
 .input-wrapper {
