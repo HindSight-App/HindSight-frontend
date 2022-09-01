@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">HindSight-frontend</string>
-    <string name="title_activity_main">HindSight-frontend</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">HindSight</string>
+    <string name="title_activity_main">HindSight</string>
+    <string name="package_name">io.hindsight.app</string>
+    <string name="custom_url_scheme">io.hindsight.app</string>
 </resources>
