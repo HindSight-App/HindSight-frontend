@@ -89,7 +89,7 @@ function Dashboard() {
                 onClick={() => push("/profile")}
               />
             </IonFabButton>
-            <IonFabButton color={"error"}>
+            <IonFabButton color={"dark"}>
               <IonIcon
                 class="local-icon"
                 icon={logOutOutline}
