@@ -3,7 +3,7 @@ import "./PostList.css";
 import { useState } from "react";
 import { Profile, Post } from "../Types/types";
 import { getPostsById } from "../services/AuthUtils";
-import { IonItem, IonRow, IonCol, IonGrid } from "@ionic/react";
+import { IonGrid, IonList } from "@ionic/react";
 import PostEl from "./PostEl";
 import { client } from "../services/client";
 
@@ -33,15 +33,13 @@ const PostList = ({
   }, [user_id]);
   return (
   <IonGrid>
+    <IonList>
     {posts.map((post:Post) => (
-      <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
-        <IonCol >
-          <IonItem class={post.type}>
-            <PostEl key={post.id} {...post}/>
-          </IonItem>
-        </IonCol>
-      </IonRow>
+      <div>
+            <PostEl key={post.id + post.title} {...post}/>
+      </div>
     ))}
+    </IonList>
   </IonGrid>
 )};
 

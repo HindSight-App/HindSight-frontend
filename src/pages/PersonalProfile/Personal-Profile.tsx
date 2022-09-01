@@ -8,7 +8,8 @@ import {
   IonCol,
   IonGrid,
   IonButtons,
-  IonFooter
+  IonFooter,
+  IonList
 } from "@ionic/react";
 import "./Personal-Profile.css";
 import AvatarIcon from "../../components/AvatarIcon";
@@ -50,20 +51,20 @@ function PersonalProfile() {
         </IonToolbar>
       </IonHeader>
       <IonContent className="new-background-color">
-        <IonGrid className="grid-Dreams-page ion-justify-content-center ion-align-items-center ion-text-center">
-          <IonRow>
-            <IonCol>
+        <IonGrid>
+          <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
+            <div className="avatar-div">
               <AvatarIcon {...profile} />
-            </IonCol>
+            </div>
           </IonRow>
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
             <IonCol>Upvotes: {profile.karma}</IonCol>
           </IonRow>
-          <IonRow>
-            <IonCol>
+          <IonList>
+            <div className="post-box">
               <PostList {...profile}/>
-            </IonCol>
-          </IonRow>
+            </div>
+          </IonList>
         </IonGrid>
       </IonContent>
       <IonFooter>

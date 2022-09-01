@@ -1,0 +1,23 @@
+.Idea {
+  border-left: 10px solid orange;
+    --background: #F0EFEB;
+    --width: 100%;
+  }
+  
+  .Dream {
+    border-left: 10px solid #9829ce;
+    --background: #E8DCFB;
+    --width: 100%;
+  }
+  
+  .Memory {
+    border-left: 10px solid #ff5733;
+    --background: #FBDCE5;
+    --width: 100%;
+  }
+  
+  .Thought {
+    border-left: 10px solid #33dbff;
+    --background: #DCF9FB;
+    --width: 100%;
+  }

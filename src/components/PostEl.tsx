@@ -18,7 +18,7 @@ const PostEl = ({
     }
       return (
         <IonItemSliding>
-        <IonItem>
+        <IonItem className={type}>
             <IonGrid >                
                 <h1>{title}</h1>
                 <p>{description}</p>
