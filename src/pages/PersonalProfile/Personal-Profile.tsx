@@ -8,7 +8,8 @@ import {
   IonCol,
   IonGrid,
   IonButtons,
-  IonFooter
+  IonFooter,
+  IonList
 } from "@ionic/react";
 import "./Personal-Profile.css";
 import AvatarIcon from "../../components/AvatarIcon";
@@ -31,7 +32,6 @@ function PersonalProfile() {
       subscription = client
         .from(`Profile:user_id=eq.${user_id}`)
         .on('UPDATE', async (payload) => {
-          console.log('Change received!', payload)
           setProfile(payload.new);
         })
         .subscribe();
@@ -45,26 +45,26 @@ function PersonalProfile() {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar class="new-background-color">
           <IonButtons slot="start"></IonButtons>
           <IonTitle>{profile.username}'s Profile</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="new-background-color">
-        <IonGrid className="grid-Dreams-page ion-justify-content-center ion-align-items-center ion-text-center">
-          <IonRow>
-            <IonCol>
-              <AvatarIcon image={profile.avatar} />
-            </IonCol>
+        <IonGrid>
+          <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
+            <div className="avatar-div">
+              <AvatarIcon {...profile} />
+            </div>
           </IonRow>
           <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
             <IonCol>Upvotes: {profile.karma}</IonCol>
           </IonRow>
-          <IonRow>
-            <IonCol>
+          <IonList>
+            <div className="post-box">
               <PostList {...profile}/>
-            </IonCol>
-          </IonRow>
+            </div>
+          </IonList>
         </IonGrid>
       </IonContent>
       <IonFooter>

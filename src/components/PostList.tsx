@@ -3,7 +3,7 @@ import "./PostList.css";
 import { useState } from "react";
 import { Profile, Post } from "../Types/types";
 import { getPostsById } from "../services/AuthUtils";
-import { IonItem, IonRow, IonCol, IonGrid } from "@ionic/react";
+import { IonGrid, IonList } from "@ionic/react";
 import PostEl from "./PostEl";
 import { client } from "../services/client";
 
@@ -18,14 +18,12 @@ const PostList = ({
   const [posts, setPosts] = useState<Post[]>([])
   useEffect(() => {
     let subscription:any = null;
-    console.log(typeof user_id);
     async function loadPosts() {
       const result = await getPostsById(user_id);
       setPosts(result);
       subscription = client
         .from(`Posts:user_id=eq.${user_id}`)
-        .on('INSERT', async (payload) => {
-          console.log('payload', payload)
+        .on('*', async (payload) => {
           setPosts(posts => [payload.new, ...posts]);
         })
         .subscribe();
@@ -35,15 +33,13 @@ const PostList = ({
   }, [user_id]);
   return (
   <IonGrid>
+    <IonList>
     {posts.map((post:Post) => (
-      <IonRow className="ion-justify-content-center ion-align-items-center ion-text-center">
-        <IonCol className={post.type}>
-          <IonItem className={post.type}>
-            <PostEl key={post.id} {...post}/>
-          </IonItem>
-        </IonCol>
-      </IonRow>
+      <div>
+            <PostEl key={post.id + post.title} {...post}/>
+      </div>
     ))}
+    </IonList>
   </IonGrid>
 )};
 

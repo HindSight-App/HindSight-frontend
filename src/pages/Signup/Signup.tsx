@@ -34,7 +34,7 @@ const Signup: React.FC = () => {
     email: "",
     password: "",
   });
-  const [file, setFile]: any = useState([]);
+  const [file]: any = useState([]);
 
   let { push } = useHistory();
 

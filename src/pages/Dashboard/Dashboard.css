@@ -1,0 +1,19 @@
+.dasboard-thumbsUp{
+    color: dodgerblue;
+}
+
+.dashboard-header-img {
+    display: flex;
+    width: 60px;
+}
+
+.dashboard-spacer{
+    margin-right: 90px;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width:40px;
+}

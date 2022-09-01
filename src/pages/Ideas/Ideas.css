@@ -1,17 +1,21 @@
-  ion-toolbar ion-title{
-    margin-top: 10px;
-  }
-  ion-content {
-    color:
-  }
-.ideas-page-icon{
-    font-size: 128px;
+ion-toolbar ion-title {
+  margin-top: 10px;
 }
-.grid-ideas-page{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+
+.ideas-page {
+  --background: orange;
 }
-.ideas-page-ion-item{
-    width: 20rem
+
+.ideas-page-icon {
+  font-size: 128px;
+}
+
+.grid-ideas-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ideas-page-ion-item {
+  width: 20rem;
 }

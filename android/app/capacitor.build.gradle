@@ -13,10 +13,9 @@ dependencies {
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
     implementation project(':capacitor-status-bar')
-    implementation "com.android.support:appcompat-v7:27.+"
+
 }
-apply from: "../../node_modules/cordova-plugin-telerik-imagepicker/src/android/ignorelinterrors.gradle"
-apply from: "../../node_modules/cordova-plugin-telerik-imagepicker/src/android/androidtarget.gradle"
+
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()
