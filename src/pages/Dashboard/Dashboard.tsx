@@ -30,7 +30,6 @@ import { Post, Profile } from "../../Types/types";
               subscription = client
                 .from(`Posts:visibility=eq.true`)
                 .on('INSERT', async (payload) => {
-                  console.log('Change received!', payload)
                   setPosts(posts => [payload.new, ...posts]);
                 })
                 .subscribe();
@@ -40,18 +39,21 @@ import { Post, Profile } from "../../Types/types";
                 const response = await getProfile();
                 setUser(response);
             }
-            loadPosts();
             loadProfile();
+            loadPosts();
             return () => {client.removeSubscription(subscription)}
         }, [])
         
+        const filterdPosts = posts.filter((post:any) => {
+          return post.user_id !== user?.user_id
+        })
+
         if (!posts) {
             return null;
           }
           if (!user) {
             return null;
           }
-      console.log(posts)
     return (
       <IonPage>
         <IonHeader>
@@ -68,9 +70,9 @@ import { Post, Profile } from "../../Types/types";
         <IonContent>
             <IonList>
 
-                    {posts.map(post =>
+                    {filterdPosts.map(post =>
                     <div >
-                        <DashboardPost key={post.id + post.title} {...post} />
+                        <DashboardPost key={post.id + post.title + post.description} {...post} />
                     </div>
                     )}
                 

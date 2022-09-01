@@ -25,3 +25,7 @@
   .dashbord-post{
     flex-direction: row;
   }
+
+  .voted{
+    color: #33dbff;
+  }

@@ -89,12 +89,11 @@ export async function getPosts(){
     return checkError(response)
 }
 
-export async function addKarma(user_id, karma){
+export async function addKarma(user_id, newKarma){
   const response = await client
     .from('Profile')
-    .update(karma)
+    .update({karma: newKarma})
     .match({ user_id})
-
     
     return checkError(response)
 }

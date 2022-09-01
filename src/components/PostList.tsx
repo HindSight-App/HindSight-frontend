@@ -18,14 +18,12 @@ const PostList = ({
   const [posts, setPosts] = useState<Post[]>([])
   useEffect(() => {
     let subscription:any = null;
-    console.log(typeof user_id);
     async function loadPosts() {
       const result = await getPostsById(user_id);
       setPosts(result);
       subscription = client
         .from(`Posts:user_id=eq.${user_id}`)
-        .on('INSERT', async (payload) => {
-          console.log('payload', payload)
+        .on('*', async (payload) => {
           setPosts(posts => [payload.new, ...posts]);
         })
         .subscribe();
