@@ -29,3 +29,12 @@
   .voted{
     color: #33dbff;
   }
+
+  .row {
+    width: 100%;
+  }
+
+  .text {
+    padding-left: 5px;
+    font-weight: bold;
+  }

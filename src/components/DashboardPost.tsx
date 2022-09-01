@@ -1,6 +1,6 @@
 import "./DashboardPost.css";
 import { Post, Profile } from "../Types/types";
-import { IonGrid, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding } from "@ionic/react";
+import { IonGrid, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonRow } from "@ionic/react";
 import { addKarma, getProfileById } from "../services/AuthUtils";
 import { thumbsUpOutline } from "ionicons/icons";
 import AvatarIcon from "./AvatarIcon";
@@ -36,12 +36,11 @@ const DashboardPost = ({
       return (
         <IonItemSliding>
         <IonItem className={`${type} dashbord-post`}>
-            <IonGrid >
-              <div className="avatar">
-                <AvatarIcon  {...profile} />
-                {profile.username}'s {type}
-              </div>
-                
+            <IonGrid>
+              <IonRow className="ion-align-items-center ion-text-center row">
+                  <AvatarIcon  {...profile} />
+                  <div className="text">{profile.username}'s {type}</div>
+              </IonRow>
                 <h1>{title}</h1>
                 <p>{description}</p>
             </IonGrid>
