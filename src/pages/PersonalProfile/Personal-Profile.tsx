@@ -31,7 +31,6 @@ function PersonalProfile() {
       subscription = client
         .from(`Profile:user_id=eq.${user_id}`)
         .on('UPDATE', async (payload) => {
-          console.log('Change received!', payload)
           setProfile(payload.new);
         })
         .subscribe();

@@ -15,12 +15,13 @@ const DashboardPost = ({
   user_id,
  }: Post  ) => {
     const [profile, setProfile] = useState<Profile>()
+    const [voted, setVoted] = useState(false);
+
     async function handleUpvote() {
         const user = await getProfileById(user_id);
-        console.log(user)
-        const newKarma = user.karma++;
+        const newKarma = user.karma+=1;
         await addKarma(user_id, newKarma)
-        console.log(user)
+        setVoted(!voted);
     }
     useEffect(() => {
       async function getProfile(){
@@ -46,7 +47,7 @@ const DashboardPost = ({
             </IonGrid>
         </IonItem>
         <IonItemOptions side="end">
-        <IonItemOption onClick={handleUpvote}><IonIcon icon={thumbsUpOutline}></IonIcon></IonItemOption>
+        <IonItemOption onClick={handleUpvote}><IonIcon className={`${voted ? "voted" : null}`} icon={thumbsUpOutline}></IonIcon></IonItemOption>
         </IonItemOptions>
             </IonItemSliding>    
       )

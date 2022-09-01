@@ -25,7 +25,7 @@ function Login() {
 
     await signIn(user.email, user.password);
 
-    push("/create");
+    push("/dashboard");
   }
 
   return (
