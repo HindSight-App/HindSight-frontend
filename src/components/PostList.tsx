@@ -24,7 +24,6 @@ const PostList = ({
       subscription = client
         .from(`Posts:user_id=eq.${user_id}`)
         .on("*", async (payload) => {
-          console.log(payload);
           if (payload.eventType === "DELETE") {
             setPosts((posts) =>
               posts.filter((post) => post.id !== payload.old.id)
