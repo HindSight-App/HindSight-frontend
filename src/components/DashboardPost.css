@@ -1,40 +1,41 @@
 .Idea {
   border-left: 10px solid orange;
-    --background: #F0EFEB;
-    --width: 100%;
-  }
-  
-  .Dream {
-    border-left: 10px solid #9829ce;
-    --background: #E8DCFB;
-    --width: 100%;
-  }
-  
-  .Memory {
-    border-left: 10px solid #ff5733;
-    --background: #FBDCE5;
-    --width: 100%;
-  }
-  
-  .Thought {
-    border-left: 10px solid #33dbff;
-    --background: #DCF9FB;
-    --width: 100%;
-  }
+  --background: #f0efeb;
+  --width: 100%;
+}
 
-  .dashbord-post{
-    flex-direction: row;
-  }
+.Dream {
+  border-left: 10px solid #9829ce;
+  --background: #e8dcfb;
+  --width: 100%;
+}
 
-  .voted{
-    color: #33dbff;
-  }
+.Memory {
+  border-left: 10px solid #ff5733;
+  --background: #fbdce5;
+  --width: 100%;
+}
 
-  .row {
-    width: 100%;
-  }
+.Thought {
+  border-left: 10px solid #33dbff;
+  --background: #dcf9fb;
+  --width: 100%;
+}
 
-  .text {
-    padding-left: 5px;
-    font-weight: bold;
-  }
+.dashbord-post {
+  flex-direction: row;
+}
+
+.voted {
+  color: #33dbff;
+}
+
+.row {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.text {
+  padding-left: 5px;
+  font-weight: bold;
+}
