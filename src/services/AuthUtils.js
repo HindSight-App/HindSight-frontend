@@ -21,6 +21,12 @@ export async function getUser() {
   return user;
 }
 
+export async function logout() {
+  await client.auth.signOut();
+
+  return (window.location.href = "/login");
+}
+
 export async function getProfile() {
   const { user } = await getUser();
   const response = await client
@@ -34,12 +40,12 @@ export async function getProfile() {
 
 export async function getProfileById(user_id) {
   const response = await client
-  .from("Profile")
-  .select("*")
-  .match({ user_id })
-  .single();
+    .from("Profile")
+    .select("*")
+    .match({ user_id })
+    .single();
 
-return checkError(response);
+  return checkError(response);
 }
 
 export async function signIn(email, password) {
@@ -63,37 +69,31 @@ export async function createHindsight({
 }
 
 export async function getPostsById(user_id) {
-  const response = await client
-    .from('Posts')
-    .select('*')
-    .match({user_id});
-    
+  const response = await client.from("Posts").select("*").match({ user_id });
+
   return checkError(response);
 }
 
 export async function deleteById(id) {
-  const response = await client
-    .from('Posts')
-    .delete()
-    .match({ id: id });
+  const response = await client.from("Posts").delete().match({ id: id });
 
-  return checkError(response)
+  return checkError(response);
 }
 
-export async function getPosts(){
+export async function getPosts() {
   const response = await client
-    .from('Posts')
-    .select('*')
-    .match({ visibility: true })
+    .from("Posts")
+    .select("*")
+    .match({ visibility: true });
 
-    return checkError(response)
+  return checkError(response);
 }
 
-export async function addKarma(user_id, newKarma){
+export async function addKarma(user_id, newKarma) {
   const response = await client
-    .from('Profile')
-    .update({karma: newKarma})
-    .match({ user_id})
-    
-    return checkError(response)
+    .from("Profile")
+    .update({ karma: newKarma })
+    .match({ user_id });
+
+  return checkError(response);
 }
